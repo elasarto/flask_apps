@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars News</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel= "stylesheet" href= "{{ url_for('static',filename='css/style.css') }}">
+ 
+</head>
+
+<body>
+<main>
+  <div class="container" id="first-container">
+
+    <div class="jumbotron text-center" id="heading">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get New Data</a></p>
+    </div>
+    <div class="row justify-content-left">
+    <!-- Mars News Articles -->
+    <div class="row" id="mars-article">
+      <div class="col">
+        <h6 class="date">{{content.date}}</h6>
+        <br>
+        <h4>Latest Mars News</h4> 
+        <h5 class="heading">{{content.headline}}</h5>
+        <medium>{{content.text}}</medium>
+      </div>
+    </div>
+    <br>
+    
+        <div class="col" id="mars-content">
+          <h4>Featured Mars Image</h4>
+          <br>
+          <figure>
+              <img src="https://www.jpl.nasa.gov{{content.image}}" class="figure-img img-fluid rounded mr-3" id="feature" alt="mars featured image">
+          </figure>
+         </div> 
+        <div class="col" id="mars-content2"> 
+            <table class="table table-borderless table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Current Weather on Mars</th>
+                  </tr>
+                </thead>
+                <tr>
+                    <td>{{content.weather}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+          <table class="table table-bordered table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Description</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tr>
+                  <th scope="row">Equatorial Diameter:</th>
+                  <td>6,792 km</td>
+                </tr>
+                <tr>
+                  <th scope="row">Polar Diameter:</th>
+                  <td>6,752 km</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mass:</th>
+                  <td>6.42 x 10^23 kg (10.7% Earth)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Moons:</th>
+                  <td>2 (Phobos &amp; Deimos)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Orbit Distance:</th>
+                  <td>227,943,824 km (1.52 AU)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Orbit Period:</th>
+                  <td>687 days (1.9 years)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Surface Temperature:</th>
+                  <td>-153 to 20 °C</td>
+                </tr>
+                <tr>
+                  <th scope="row">First Record:</th>
+                  <td>2nd millennium BC</td>
+                </tr>
+                <tr>
+                  <th scope="row">Recorded By:</th>
+                  <td>Egyptian astronomers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="row" id="mars-hemispheres">
+    
+          <div class="col-md-6" id="hemispheres1">
+              <br>
+              <figure>
+                <figcaption>Cerberus Hemisphere Enhanced</figcaption>
+                  <img src="{{content.hemisphere1}}" class="figure-img img-fluid rounded mr-3" id="feature" alt="mars featured image">
+              </figure>
+             </div> 
+             <div class="col-md-6" id="hemispheres1">
+                <br>
+                <figure>
+                  <figcaption>Schiaparelli Hemisphere Enhanced</figcaption>
+                    <img src="{{content.hemisphere2}}" class="figure-img img-fluid rounded mr-3" id="feature" alt="mars featured image">
+                </figure>
+               </div> 
+               <div class="row" id="mars-hemispheres"></div>
+               <div class="col-md-6" id="hemispheres2">
+                  <br>
+                  <figure>
+                    <figcaption>Syrtis Major Hemisphere Enhanced</figcaption>
+                      <img src="{{content.hemisphere3}}" class="figure-img img-fluid rounded mr-3" id="feature" alt="mars featured image">
+                  </figure>
+                 </div> 
+                 <div class="col-md-6" id="hemispheres2">
+                    <br>
+                    <figure>
+                      <figcaption>Valles Marineris Hemisphere Enhanced</figcaption>
+                        <img src="{{content.hemisphere4}}" class="figure-img img-fluid rounded mr-3" id="feature" alt="mars featured image">
+                    </figure>
+                   </div> 
+    
+    </div>
+    </div>  
+    
+  </div>    
+  </div>
+</main>  
+</body>
+
+</html>
